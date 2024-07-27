@@ -40,7 +40,20 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        double t = Double.parseDouble(br.readLine());
+        if (t < 0) {
+            System.out.println("Input must be positive");
+        }
 
+        t = t % 5;
+
+        if (t < 3) {
+            System.out.println("зеленый");
+        } else if (t < 4) {
+            System.out.println("желтый");
+        } else {
+            System.out.println("красный");
+        }
     }
 }

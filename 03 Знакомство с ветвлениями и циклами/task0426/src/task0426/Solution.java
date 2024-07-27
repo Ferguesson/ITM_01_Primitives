@@ -31,7 +31,38 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        final String NEGATIVE_EVEN = "отрицательное четное число";
+        final String NEGATIVE_ODD = "отрицательное нечетное число";
+        final String ZERO = "ноль";
+        final String POSITIVE_EVEN = "положительное четное число";
+        final String POSITIVE_ODD = "положительное нечетное число";
 
+        boolean isNegative = false;
+        boolean isEven = false;
+        int number = Integer.parseInt(br.readLine());
+
+        if (number == 0) {
+            System.out.println(ZERO);
+            return;
+        }
+
+        if (number % 2 == 0) {
+            isEven = true;
+        }
+
+        if (number < 0) {
+            isNegative = true;
+        }
+
+        if (isNegative && isEven) {
+            System.out.println(NEGATIVE_EVEN);
+        } else if (isNegative) {
+            System.out.println(NEGATIVE_ODD);
+        } else if (isEven) {
+            System.out.println(POSITIVE_EVEN);
+        } else {
+            System.out.println(POSITIVE_ODD);
+        }
     }
 }
